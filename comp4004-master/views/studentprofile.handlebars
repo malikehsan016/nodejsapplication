@@ -1,0 +1,35 @@
+ <h2 class="page-header">Dashboard</h2>
+
+
+  {{#if user}}
+    <p>Hello {{username}}, Welcome to your student dashboard! </p>
+ 
+  {{/if}}
+ 
+
+
+
+<br>
+<br>
+<center>
+<a href = "/users/getStudentProjects"> <button  class="btn btn-default" name = "viewProjects"> View Existing Projects</button></a> 
+<br>
+<br>
+<div> 
+  {{#each projects}}
+  <form method="post" action="/users/registerinproject">
+    <article class = "projects"> 
+    <div> <b>Project Name   :</b> {{ this.projectName}} </div> 
+    <div> <b>Assigned to    :</b> {{ this.owner}} </div> 
+    
+
+      <input type="hidden" name="projectid" value={{this.projectName}}>
+  
+    <button  class="btn btn-default" name={{this.projectName}}> Resgister</button>
+      </form >
+    <br> 
+    <br> 
+  </article> 
+  {{/each}}
+
+  </center>

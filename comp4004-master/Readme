@@ -1,0 +1,30 @@
+Readme: 
+______ 
+
+Make sure you have mongo and node installed on your PC. This can be done using package managers like "brew"
+To run the app in linux or mac: 
+1) go to the main folder of the app through terminal. 
+2) run "npm install" to get all the necessary node modules. 
+3) run "node app" through terminal 
+4) navigate to "localhost:3000" on your browser to view the app. 
+
+
+To run the app in Windows: 
+1) run the "npm install" through terminal, in the main directory of the app. 
+2) run "mongod" to get the mongodb working 
+3) run "node app" through cmd. 
+4) navigate to "localhost:3000" on your browser to view the app. 
+
+_____________________________________________________
+
+To run the Tests: 
+
+1) run the feature file "createProject.feature". 
+	this will populate the database with bunch of projects. 
+2) run the feature file "registrationFirst.feature"
+	this will register student1 in the database (with username: student1 and  password: 123)
+3) run the feature file "secondRegisteration.feature" 
+	this will register student2 in the database (with username: student2 and password: 123)
+4) run the "selectProjects.feature" to run the test for attributed and unattriuted projects. 
+
+

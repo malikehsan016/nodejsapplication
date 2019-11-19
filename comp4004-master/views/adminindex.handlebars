@@ -1,0 +1,44 @@
+ <h2 class="page-header">Admin Dashboard</h2>
+<p>Welcome to your Administrator dashboard, register a project: </p>  
+
+
+
+{{#if errors}}
+      {{#each errors}}
+        <div class="alert alert-danger">{{msg}}</div>
+      {{/each}}
+{{/if}}
+<form method="post" action="/users/registerproject">
+   <div class="form-group">
+    <label>Project Name</label>
+    <input type="text" class="form-control" placeholder="Name" name="projectname">
+  </div>
+  <center>
+  <button type="submit" class="btn btn-default" name ="registerproject">Register</button>
+  </center>
+</form>
+<br>
+<br>
+<center>
+<a href = "/users/getprojects"> <button  class="btn btn-default"> View Existing Projects</button></a> 
+<br>
+<br>
+<div> 
+  {{#each projects}}
+    <form method="post" action="/users/deleteProject">
+
+    <article class = "projects"> 
+    <div> <b>Project Name   :</b> {{ this.projectName}} </div> 
+    <div> <b>Assigned to    :</b> {{ this.owner}} </div> 
+    <div> <b>Project Id     :</b> {{this._id}}</div>
+   <input type="hidden" name="projectName" value={{this.projectName}}>
+
+    <button  class="btn btn-default" name={{this.projectName}}> Delete</button>
+  </form >
+    <br> 
+    <br> 
+  </article> 
+  {{/each}}
+         </form >
+
+  </center>

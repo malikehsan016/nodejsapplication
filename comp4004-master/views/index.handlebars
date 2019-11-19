@@ -1,0 +1,29 @@
+ <h2 class="page-header">Dashboard</h2>
+
+
+
+  {{#if user}}
+    <p>Hello {{username}}</p>
+  {{/if}}
+
+  <p> Welcome to your dashboard</p>  
+
+
+<br>
+<br>
+<center>
+<a href = "/users/getStudentProjects"> <button  class="btn btn-default"> View Projects</button></a> 
+<br>
+<br>
+<div> 
+  {{#each projects}}
+    <article class = "projects"> 
+    <div> <b>Project Name   :</b> {{ this.projectName}} </div> 
+    <div> <b>Assigned to    :</b> {{ this.owner}} </div> 
+    <button  class="btn btn-default"> Resgister</button>
+    <br> 
+    <br> 
+  </article> 
+  {{/each}}
+
+  </center>
